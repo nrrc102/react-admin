@@ -16,9 +16,8 @@ const App = () =>
   <Admin 
   title="Cebugi" 
   dashboard={Dashboard} 
-  dataProvider={dataProvider} 
   authProvider={AuthProvider} 
-  dataProvider={DataProvider}
+  dataProvider={dataProvider}
   catchAll={NotFound}>
       <Resource name="posts" list={Posts} create={PostCreate} edit={PostEdit} icon={PostIcon}  />
       <Resource name="users" list={UserList} icon={UserIcon} />
