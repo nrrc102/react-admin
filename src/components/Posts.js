@@ -51,14 +51,14 @@ export const Posts = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
     return (
-        <List filters={<PostFilter/>} {...props}>
+        <List filters={<PostFilter/>} {...props} >
             {isSmall ? (
             <SimpleList 
             primaryText={record => record.title} 
             secondaryText={record => `${record.views} views`} 
             tertiaryText={record => new Date(record.published_at).toLocaleDateString()}/>
             ) : (
-            <Datagrid>
+            <Datagrid rowClick="edit" actions={<EditActions/>}>
                <TextField source="id" />
                 <ReferenceField source="userId" reference="users" >
                     <TextField source="name" />
